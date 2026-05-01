@@ -43,6 +43,6 @@ public:
     String toString() const override; // kiírható formátumba alakítja
 };
 
-std::ostream& operator<<(std::ostream& os, const Film& film);
+std::ostream& operator<<(std::ostream& os, const Film& film); // kiírható formátumba alakítja
 
 #endif 
