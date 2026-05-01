@@ -18,7 +18,7 @@ public:
 class HorrorFilm: public Film{
     int ijesztes_faktor;
 public:
-    HorrorFilm(String cim, int idö, int ev, int ijesztes);
+    HorrorFilm(String cim, int ido, int ev, int ijesztes);
 
     String encode() const override; // fájl formátumba alakítja
     String toString() const override; // kiírható formátumba alakítja
@@ -27,7 +27,7 @@ public:
 class DokumentumFilm: public Film{
     String tema;
 public:
-    DokumentumFilm(String cim, int idö, int ev, String tema);
+    DokumentumFilm(String cim, int ido, int ev, String tema);
 
     String encode() const override; // fájl formátumba alakítja
     String toString() const override; // kiírható formátumba alakítja
@@ -38,7 +38,7 @@ public:
 class CsaladiFilm: public Film{
     int korhatar;
 public:
-    CsaladiFilm(String cim, int idö, int ev, int korhatar);
+    CsaladiFilm(String cim, int ido, int ev, int korhatar);
     String encode() const override; // fájl formátumba alakítja
     String toString() const override; // kiírható formátumba alakítja
 };

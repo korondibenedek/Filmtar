@@ -9,7 +9,7 @@ class String{
     size_t hossz;
 public:
     String();
-    String(const char* szöveg);
+    String(const char* szoveg);
     String(const String& string);
     ~String();
     String& operator=(const String& rhs);

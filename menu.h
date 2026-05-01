@@ -15,8 +15,8 @@ class Menu{
     void listazasFolyamat(); // listázás interface részét kezeli
     Film* valasztasFolyamat(); // kiválasztás interface részét kezeli
 
-    String bekerString(const char* szöveg); // bekér egy stringet az interfaceről
-    int bekerInt(const char* szöveg); // bekér egy intet az interfaceről
+    String bekerString(const char* szoveg); // bekér egy stringet az interfaceről
+    int bekerInt(const char* szoveg); // bekér egy intet az interfaceről
 public:
     Menu();
     ~Menu();
