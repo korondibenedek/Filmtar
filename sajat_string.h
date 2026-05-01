@@ -19,6 +19,6 @@ public:
     const char* c_str() const; //vissaadja a nyers karaktertömböt
 };
 
-std::ostream& operator<<(std::ostream& os, const String& str); // kiírható formátumba alakítja
+std::ostream& operator<<(std::ostream& os, const String& str); // kiírja a Stringet
 
 #endif

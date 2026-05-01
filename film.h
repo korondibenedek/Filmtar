@@ -38,11 +38,11 @@ public:
 class CsaladiFilm: public Film{
     int korhatar;
 public:
-    CsaladiFilm(String cim, int idö, int ev, String tema);
+    CsaladiFilm(String cim, int idö, int ev, int korhatar);
     String encode() const override; // fájl formátumba alakítja
     String toString() const override; // kiírható formátumba alakítja
 };
 
-std::ostream& operator<<(std::ostream& os, const Film& film); // kiírható formátumba alakítja
+std::ostream& operator<<(std::ostream& os, const Film& film); // kiírható formátumban kiírja a filmet
 
 #endif 
