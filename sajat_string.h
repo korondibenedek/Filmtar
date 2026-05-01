@@ -2,6 +2,7 @@
 #define SAJAT_STRING_H
 
 #include <cstddef>
+#include <iostream>
 
 class String{
     char* adat;
@@ -12,10 +13,12 @@ public:
     String(const String& string);
     ~String();
     String& operator=(const String& rhs);
-    String& operator+ (const String& rhs);
-    bool operator==(const String& rhs); 
-    bool illeszkedik(const String& minta); //ez keresi ki a *-ot
-    const char* c_str() const; //nyers mutatot ad vissza
+    String operator+(const String& rhs) const;
+    bool operator==(const String& rhs) const; 
+    bool illeszkedik(const String& minta) const; //ez keresi ki a *-ot
+    const char* c_str() const; //vissaadja a nyers karaktertömböt
 };
+
+std::ostream& operator<<(std::ostream& os, const String& str);
 
 #endif

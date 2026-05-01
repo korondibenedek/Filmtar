@@ -2,6 +2,7 @@
 #define FILM_H
 
 #include "sajat_string.h"
+#include <iostream>
 
 class Film{
     String cim;
@@ -41,5 +42,7 @@ public:
     String encode() const override; // fájl formátumba alakítja
     String toString() const override; // kiírható formátumba alakítja
 };
+
+std::ostream& operator<<(std::ostream& os, const Film& film);
 
 #endif 
