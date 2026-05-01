@@ -1,3 +1,6 @@
+#ifndef FILM_H
+#define FILM_H
+
 #include "sajat_string.h"
 
 class Film{
@@ -29,6 +32,8 @@ public:
     String toString() const override; // kiírható formátumba alakítja
 };
 
+
+
 class CsaladiFilm: public Film{
     int korhatar;
 public:
@@ -36,3 +41,5 @@ public:
     String encode() const override; // fájl formátumba alakítja
     String toString() const override; // kiírható formátumba alakítja
 };
+
+#endif 

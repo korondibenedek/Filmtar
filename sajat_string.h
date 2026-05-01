@@ -1,3 +1,6 @@
+#ifndef SAJAT_STRING_H
+#define SAJAT_STRING_H
+
 #include <cstddef>
 
 class String{
@@ -14,3 +17,5 @@ public:
     bool illeszkedik(const String& minta); //ez keresi ki a *-ot
     const char* c_str() const; //nyers mutatot ad vissza
 };
+
+#endif
