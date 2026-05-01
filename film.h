@@ -7,8 +7,8 @@ class Film{
 public:
     Film(String  cim, int hossz, int ev);
     virtual ~Film();
-    virtual String encode() const = 0;
-    virtual String toString() const = 0;
+    virtual String encode() const = 0; // fájl formátumba alakítja
+    virtual String toString() const = 0; // kiírható formátumba alakítja
 };
 
 class HorrorFilm: public Film{
@@ -16,8 +16,8 @@ class HorrorFilm: public Film{
 public:
     HorrorFilm(String cim, int idö, int ev, int ijesztes);
 
-    String encode() const override;
-    String toString() const override;
+    String encode() const override; // fájl formátumba alakítja
+    String toString() const override; // kiírható formátumba alakítja
 };
 
 class DokumentumFilm: public Film{
@@ -25,14 +25,14 @@ class DokumentumFilm: public Film{
 public:
     DokumentumFilm(String cim, int idö, int ev, String tema);
 
-    String encode() const override;
-    String toString() const override;
+    String encode() const override; // fájl formátumba alakítja
+    String toString() const override; // kiírható formátumba alakítja
 };
 
 class CsaladiFilm: public Film{
     int korhatar;
 public:
     CsaladiFilm(String cim, int idö, int ev, String tema);
-    String encode() const override;
-    String toString() const override;
+    String encode() const override; // fájl formátumba alakítja
+    String toString() const override; // kiírható formátumba alakítja
 };

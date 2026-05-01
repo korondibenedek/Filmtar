@@ -10,7 +10,7 @@ public:
     ~String();
     String& operator=(const String& rhs);
     String& operator+ (const String& rhs);
-    bool operator==(const String& rhs);
+    bool operator==(const String& rhs); 
     bool illeszkedik(const String& minta); //ez keresi ki a *-ot
-    const char* c_str() const; //nyers mutato
+    const char* c_str() const; //nyers mutatot ad vissza
 };
