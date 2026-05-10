@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <cstddef>
 
+/// @brief filmeket osszefogo heterogen kollekcio
 class Filmtar{
     Film** filmek;
     size_t db;

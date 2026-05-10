@@ -104,6 +104,9 @@ bool String::operator==(const String& rhs)const{
     return false;
 }
 
+/// @brief railleszti a mintát az adott stringre figyelembe veve hogy van benne csillag elotte kozotte utana (az elso feleves C-ben irt telefonkonyvembol vettem at)
+/// @param minta erre illeszkedik
+/// @return ha illeszkedik a stringre a minta igaz ha nem hamis
 bool String::illeszkedik(const String& minta)const{
     if(adat == nullptr || minta.adat == nullptr){
         throw "Null pointer hiba az illeszkedik fuggvenyben!";
@@ -194,6 +197,10 @@ const char* String::c_str() const{
     return adat != nullptr ? adat : "";        
 }
 
+/// @brief kiiro operator overload
+/// @param os kimenet
+/// @param str 
+/// @return kiírja a stringet
 std::ostream& operator<<(std::ostream& os, const String& str){
     os << str.c_str();
     return os;

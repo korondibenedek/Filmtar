@@ -4,6 +4,7 @@
 #include "sajat_string.h"
 #include <iostream>
 
+/// @brief Filmek alaposztalya(abstract)
 class Film{
     String cim;
     int idotartam;
@@ -15,6 +16,7 @@ public:
     virtual String toString() const = 0; // kiírható formátumba alakítja
 };
 
+/// @brief HorrorFilm, a Film alosztalya plusz adattag ijesztes_faktor
 class HorrorFilm: public Film{
     int ijesztes_faktor;
 public:
@@ -24,6 +26,7 @@ public:
     String toString() const override; // kiírható formátumba alakítja
 };
 
+/// @brief DokumentumFilm, a Film alosztalya plusz adattag tema
 class DokumentumFilm: public Film{
     String tema;
 public:
@@ -34,7 +37,7 @@ public:
 };
 
 
-
+/// @brief CsaladiFilm, a Film alosztalya plusz adattag korhatar
 class CsaladiFilm: public Film{
     int korhatar;
 public:

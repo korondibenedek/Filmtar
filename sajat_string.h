@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <iostream>
 
+/// @brief String class sajat implementacioja
 class String{
     char* adat;
     size_t hossz;

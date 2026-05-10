@@ -4,6 +4,7 @@
 #include "filmtar.h"
 #include "sajat_string.h"
 
+/// @brief inerface-t kezelo Menu
 class Menu{
     Filmtar tar;
 
