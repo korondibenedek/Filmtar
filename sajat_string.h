@@ -11,6 +11,7 @@ class String{
 public:
     String();
     String(const char* szoveg);
+    String(int szam);
     String(const String& string);
     ~String();
     String& operator=(const String& rhs);

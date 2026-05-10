@@ -1,5 +1,6 @@
 #include "sajat_string.h"
 #include <cstring>
+#include <cstdio>
 
 /// @brief konstruktor 
 String::String(): adat(nullptr), hossz(0){};
@@ -16,6 +17,15 @@ String::String(const char* szoveg){
         adat = new char[hossz + 1];
         strcpy(adat, szoveg);
     }
+}
+
+String::String(int szam){
+    char buffer[32]; // at egesz szamnak buffer
+
+    sprintf(buffer, "%d", szam);
+    hossz = strlen(buffer);
+    adat = new char[hossz + 1];
+    strcpy(adat, buffer);
 }
 
 /// @brief copy konstruktor
