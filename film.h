@@ -14,6 +14,12 @@ public:
     virtual ~Film();
     virtual String encode() const = 0; // fájl formátumba alakítja
     virtual String toString() const = 0; // kiírható formátumba alakítja
+    String getCim() const;
+    int getHossz() const;
+    int getEv() const;
+    void setCim(const String& ujCim);
+    void setHossz(int ujHossz);
+    void setEv(int ujEv);
 };
 
 /// @brief HorrorFilm, a Film alosztalya plusz adattag ijesztes_faktor

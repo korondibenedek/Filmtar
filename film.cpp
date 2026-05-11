@@ -23,6 +23,42 @@ String Film::toString() const{
     return  Cim + cim + "; Idotartam: " + String(idotartam) + "; Kiadasi ev: " + String(kiadasi_ev);
 }
 
+/// @brief getter
+/// @return film cime
+String Film::getCim() const{
+    return cim;
+}
+
+/// @brief idotartam getter
+/// @return film idotartama
+int Film::getHossz() const{
+    return idotartam;
+}
+
+/// @brief kiadasi_ev getter
+/// @return film kiadasi eve 
+int Film::getEv() const{
+    return kiadasi_ev;
+}
+
+/// @brief cim setter
+/// @param ujCim uj beallitando cim
+void Film::setCim(const String& ujCim){
+    cim = ujCim;
+}
+
+/// @brief idotartam setter
+/// @param ujHossz beallitando uj hossz
+void Film::setHossz(int ujHossz){
+    idotartam = ujHossz;
+}
+
+/// @brief kiadasi ev setter
+/// @param ujEv beallitando uj ev
+void Film::setEv(int ujEv){
+    kiadasi_ev = ujEv;
+}
+
 /// @brief Horror film konstruktora
 /// @param cim film cime
 /// @param hossz film hossza 
@@ -33,7 +69,7 @@ HorrorFilm::HorrorFilm(String cim, int ido, int ev, int ijesztes): Film(cim,ido,
 /// @brief fajlba menheto alakba irja, plusz adattag ijesztes_faktor
 /// @return atalakitott string
 String HorrorFilm::encode() const{
-    return Film::encode() + ";" + String(ijesztes_faktor);
+    return String("H;") + Film::encode() + ";" + String(ijesztes_faktor);
 }
 
 /// @brief kiirhato alakba irja, plusz adattag ijesztes_faktor
@@ -52,7 +88,7 @@ DokumentumFilm::DokumentumFilm(String cim, int ido, int ev, String tema): Film(c
 /// @brief fajlba menheto alakba irja, plusz adattag tema
 /// @return atalakitott string
 String DokumentumFilm::encode() const{
-    return Film::encode() + ";" + tema;
+    return String("D;") + Film::encode() + ";" + tema;
 }
 
 /// @brief kiirhato alakba irja, plusz adattag tema
@@ -71,7 +107,7 @@ CsaladiFilm::CsaladiFilm(String cim, int ido, int ev, int korhatar): Film(cim,id
 /// @brief fajlba menheto alakba irja, plusz adattag korhatar
 /// @return atalakitott string
 String CsaladiFilm::encode() const{
-    return Film::encode() + ";" + String(korhatar);
+    return String("C;") + Film::encode() + ";" + String(korhatar);
 }
 
 /// @brief kiirhato alakba irja, plusz adattag korhatar
