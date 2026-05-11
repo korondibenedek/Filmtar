@@ -183,7 +183,7 @@ void Filmtar::fajlbol_betolt(){
         if (!tipus_str || !cim_str || !hossz_str || !ev_str || !extra_str) continue;
         
         //a Windows-os (\r) karakter levagasa, ha ott lenne
-        char* per_r = strchr(extra_str, '\r'); //vissza adja a keresett karakter pointert
+        char* per_r = strchr(extra_str, '\r'); //vissza adja a keresett karakter pointert ha van, ha nincs akkor null ptr
         if (per_r != nullptr) *per_r = '\0';
 
         //tipuskonverziok
