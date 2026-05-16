@@ -18,6 +18,7 @@ public:
     Film** keresCim(const String& feltetel, int& talalat); // vissza ad egy szűrt listát
     Film** keresHossz(int minHossz , int maxHossz, int& talalat); // vissza ad egy szűrt listát
     Film** keresEv(int minEv, int maxEv, int& talalat);// vissza ad egy szűrt listát
+    Film** getMind(int& talalat); // visszaadja az osszes filmet
     //void modosit(Film* film); módosítja egy kiválasztott film egy adattagját (ez megse kell)
     void torol(Film* film); //kitörli a kiválasztott filmet a heterogén kollekcióból
     void fajlbol_betolt();  //betölti a fájlból a filmeket

@@ -70,7 +70,8 @@ Film** Filmtar::keresCim(const String& feltetel, int& talalat){
         }
     }
 
-    return talalatok;
+    if(talalat == 0) return nullptr;
+    else return talalatok;
 }
 
 /// @brief idotartam alapjan torteno kereses
@@ -92,7 +93,8 @@ Film** Filmtar::keresHossz(int minHossz , int maxHossz, int& talalat){
         }
     }
 
-    return talalatok;
+    if(talalat == 0) return nullptr;
+    else return talalatok;
 }
 
 /// @brief kiadasi alapjan torteno kereses
@@ -114,7 +116,22 @@ Film** Filmtar::keresEv(int minEv , int maxEv, int& talalat){
         }
     }
 
-    return talalatok;
+    if(talalat == 0) return nullptr;
+    else return talalatok;
+}
+
+/// @brief Visszaadja a tarban levo osszes filmet
+/// @param talalat filmek szama
+/// @return masolat a filmek pointereirol (a hivonak kell felszabaditania a tombot)
+Film** Filmtar::getMind(int& talalat){
+    talalat = db;
+    Film** mind = new Film*[db];
+    
+    for(size_t i = 0; i < db; i++){
+        mind[i] = filmek[i];
+    }
+    
+    return mind;
 }
 
 /// @brief kikeresi a megadott filmet es kitorli

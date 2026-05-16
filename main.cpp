@@ -17,6 +17,7 @@ int main() {
     teszt_tar.hozzaad(horror);
     teszt_tar.hozzaad(csaladi);
   
+    
 
     Menu fomenu;
     fomenu.run();

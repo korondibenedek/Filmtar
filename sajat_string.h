@@ -16,11 +16,14 @@ public:
     ~String();
     String& operator=(const String& rhs);
     String operator+(const String& rhs) const;
+    size_t size();
     bool operator==(const String& rhs) const; 
     bool illeszkedik(const String& minta) const; //ez keresi ki a *-ot
     const char* c_str() const; //vissaadja a nyers karaktertömböt
 };
 
 std::ostream& operator<<(std::ostream& os, const String& str); // kiírja a Stringet
+
+std::istream& operator>>(std::istream& is, String& str); // beolvassa a Stringet
 
 #endif

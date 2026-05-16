@@ -1,6 +1,7 @@
 #include "sajat_string.h"
 #include <cstring>
 #include <cstdio>
+#include <cstdlib>
 
 /// @brief konstruktor 
 String::String(): adat(nullptr), hossz(0){};
@@ -93,6 +94,10 @@ String String::operator+(const String& rhs)const{
     return ujadat;
 }
 
+size_t String::size(){
+    return hossz;
+}
+
 /// @brief egyenloseg vizsgalo ket string kozott
 /// @param rhs 
 /// @return igaz ha egyenlo 
@@ -114,7 +119,7 @@ bool String::operator==(const String& rhs)const{
     return false;
 }
 
-/// @brief railleszti a mintát az adott stringre figyelembe veve hogy van benne csillag elotte kozotte utana (az elso feleves C-ben irt telefonkonyvembol vettem at)
+/// @brief railleszti a mintat az adott stringre figyelembe veve hogy van benne csillag elotte kozotte utana (az elso feleves C-ben irt telefonkonyvembol vettem at)
 /// @param minta erre illeszkedik
 /// @return ha illeszkedik a stringre a minta igaz ha nem hamis
 bool String::illeszkedik(const String& minta)const{
@@ -171,7 +176,7 @@ bool String::illeszkedik(const String& minta)const{
         }
     }
 
-    // osszehasonlitas ha közötte van a csillag
+    // osszehasonlitas ha kozotte van a csillag
     else{
         // kette bontjuk a bemenetet
 
@@ -209,9 +214,21 @@ const char* String::c_str() const{
 
 /// @brief kiiro operator overload
 /// @param os kimenet
-/// @param str 
-/// @return kiírja a stringet
+/// @param str string amibe beolvasunk
+/// @return kiirja a stringet
 std::ostream& operator<<(std::ostream& os, const String& str){
     os << str.c_str();
     return os;
+}
+
+/// @brief beolvaso operator overload
+/// @param is bemenet
+/// @param str string amibe beolvasunk
+/// @return beolvassa a stringet
+std::istream& operator>>(std::istream& is, String& str){
+    char buffer[512];
+    is >> std::ws; //eldobjuk a korabbi beolvasasok utan a pufferben maradt "Entert"
+    is.getline(buffer, 512);  //beolvassa a teljes sort a kovetkezo Enter-ig 
+    str = String(buffer); 
+    return is;
 }
