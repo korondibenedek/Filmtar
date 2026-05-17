@@ -41,24 +41,6 @@ int Film::getEv() const{
     return kiadasi_ev;
 }
 
-/// @brief cim setter
-/// @param ujCim uj beallitando cim
-void Film::setCim(const String& ujCim){
-    cim = ujCim;
-}
-
-/// @brief idotartam setter
-/// @param ujHossz beallitando uj hossz
-void Film::setHossz(int ujHossz){
-    idotartam = ujHossz;
-}
-
-/// @brief kiadasi ev setter
-/// @param ujEv beallitando uj ev
-void Film::setEv(int ujEv){
-    kiadasi_ev = ujEv;
-}
-
 /// @brief Horror film konstruktora
 /// @param cim film cime
 /// @param hossz film hossza 
