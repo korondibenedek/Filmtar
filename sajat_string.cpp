@@ -2,6 +2,7 @@
 #include <cstring>
 #include <cstdio>
 #include <cstdlib>
+#include "memtrace.h"
 
 /// @brief konstruktor 
 String::String(): adat(nullptr), hossz(0){};

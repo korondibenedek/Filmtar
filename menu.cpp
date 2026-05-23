@@ -1,5 +1,6 @@
 # include "menu.h"
 #include <stdexcept>
+#include "memtrace.h"
 
 
 /// @brief Menu konstruktora: indulaskor betolti az adatokat fajlbol

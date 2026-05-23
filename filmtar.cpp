@@ -4,6 +4,7 @@
 #include <fstream>
 #include <cstring>
 #include <cstdlib>
+#include "memtrace.h"
 
 /// @brief filmtar konstruktora
 Filmtar::Filmtar():db(0), kapacitas(50){
@@ -70,8 +71,10 @@ Film** Filmtar::keresCim(const String& feltetel, int& talalat){
         }
     }
 
-    if(talalat == 0) return nullptr;
-    else return talalatok;
+    if(talalat == 0) {
+        delete[] talalatok;
+        return nullptr;
+    } else return talalatok;
 }
 
 /// @brief idotartam alapjan torteno kereses
@@ -93,8 +96,10 @@ Film** Filmtar::keresHossz(int minHossz , int maxHossz, int& talalat){
         }
     }
 
-    if(talalat == 0) return nullptr;
-    else return talalatok;
+    if(talalat == 0) {
+        delete[] talalatok;
+        return nullptr;
+    } else return talalatok;
 }
 
 /// @brief kiadasi alapjan torteno kereses
@@ -116,8 +121,10 @@ Film** Filmtar::keresEv(int minEv , int maxEv, int& talalat){
         }
     }
 
-    if(talalat == 0) return nullptr;
-    else return talalatok;
+    if(talalat == 0) {
+        delete[] talalatok;
+        return nullptr;
+    } else return talalatok;
 }
 
 /// @brief Visszaadja a tarban levo osszes filmet

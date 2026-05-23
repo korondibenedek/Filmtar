@@ -1,5 +1,6 @@
 #include "film.h"
 #include "sajat_string.h"
+#include "memtrace.h"
 
 /// @brief konstruktor
 /// @param cim film cime

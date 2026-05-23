@@ -1,23 +1,29 @@
 CXX = g++
-CXXFLAGS = -Wall -Wextra -pedantic -g -std=c++11
+CXXFLAGS = -Wall -Wextra -pedantic -std=c++11 -DMEMTRACE
 
+SRCS = main.cpp film.cpp filmtar.cpp menu.cpp sajat_string.cpp memtrace.cpp 
+OBJS = $(SRCS:.cpp=.o)
+EXEC = filmtar_app
 
-OBJS = main.o filmtar.o menu.o film.o sajat_string.o
-EXEC = filmtar
+TEST_SRCS = test.cpp film.cpp filmtar.cpp menu.cpp sajat_string.cpp memtrace.cpp 
+TEST_OBJS = $(TEST_SRCS:.cpp=.o)
+TEST_EXEC = filmtar_test
 
-.PHONY: all clean
+.PHONY: all clean test
 
 all: $(EXEC)
 
 $(EXEC): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(EXEC) $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
-# Fájl szintű függőségek, hogy módosításkor újraforduljanak
-main.o: main.cpp menu.h filmtar.h film.h sajat_string.h
-filmtar.o: filmtar.cpp filmtar.h sajat_string.h film.h
-menu.o: menu.cpp menu.h filmtar.h sajat_string.h film.h
-film.o: film.cpp film.h sajat_string.h
-sajat_string.o: sajat_string.cpp sajat_string.h
+test: $(TEST_EXEC)
+	./$(TEST_EXEC)
+
+$(TEST_EXEC): $(TEST_OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(EXEC)
+	rm -f *.o $(EXEC) $(TEST_EXEC)
